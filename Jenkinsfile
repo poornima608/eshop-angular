@@ -21,8 +21,8 @@ node {
      }
         stage('AWS Connection and Deployment'){
             steps{
-                   sshagent(['AWS_EC2']) {
-                   sh ' ssh -o StrictHostKeyChecking=no ubuntu@52.3.249.19'
+                   sshagent(['AWS_EC2_Project']) {
+                   sh ' ssh -i "AWS_EC2_Project.pem" ubuntu@ec2-54-161-112-234.compute-1.amazonaws.com'
                }
             }
         }
