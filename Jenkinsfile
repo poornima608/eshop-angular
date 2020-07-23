@@ -22,7 +22,7 @@ node {
         stage('AWS Connection and Deployment'){
             steps{
                    sshagent(['AWS_EC2']) {
-                   sh ' ssh -o StrictHostKeyChecking=no ubuntu@52.3.249.19 sudo docker-compose up -d'
+                   sh ' ssh -o StrictHostKeyChecking=no ubuntu@52.3.249.19'
                }
             }
         }
