@@ -3,18 +3,18 @@ stage ('Checkout SCM'){
 git branch: 'master',url:'https://github.com/poornima608/eshop-angular.git'
 }
 stage ('Install node modules'){
-bat '''
+powershell '''
 npm i -f
 '''
 }
 stage('Build'){
-bat
+powershell
   '''
   ng build -prod
   '''
 }
 stage('Deploy'){
-bat '''
+powershell '''
 pm2 restart all
 '''
 }
