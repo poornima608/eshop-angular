@@ -22,7 +22,7 @@ node {
         stage('AWS Connection and Deployment'){
             steps{
                    sshagent(['AWS_EC2_Project']) {
-                   sh ' ssh -i "AWS_EC2_Project.pem" ubuntu@ec2-54-161-112-234.compute-1.amazonaws.com'
+                   bat ' ssh -i "AWS_EC2_Project.pem" ubuntu@ec2-54-161-112-234.compute-1.amazonaws.com'
                }
             }
         }
