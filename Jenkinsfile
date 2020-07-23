@@ -4,7 +4,7 @@ git branch: 'master',url:'https://github.com/poornima608/eshop-angular.git'
 }
 stage ('Install node modules'){
 bat '''
-npm install
+npm i -f
 '''
 }
 stage('Build'){
