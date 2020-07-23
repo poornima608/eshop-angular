@@ -8,8 +8,10 @@ npm install
 '''
 }
 stage('Build'){
-bat "npm run ng -- build --prod"
-
+bat
+  '''
+  npm run ng --build --prod
+  '''
 }
 stage('Deploy'){
 bat '''
