@@ -10,7 +10,7 @@ npm install
 stage('Build'){
 bat
 '''
-npm install ng build --prod --aot
+ng build --no-aot --no-build-optimizer --base-href ./
 '''
 bat''' 
 cd eshop
