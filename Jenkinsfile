@@ -10,7 +10,7 @@ npm i -f
 stage('Build'){
 bat
   '''
-  ng build
+  ng build -prod
   '''
 }
 stage('Deploy'){
