@@ -10,7 +10,7 @@ npm install
 stage('Build'){
 bat
   '''
-  ng build --prod
+  ng run ng build --prod
   '''
 }
 stage('Deploy'){
