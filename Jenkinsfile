@@ -10,7 +10,7 @@ node {
                      bat "npm run ng -- build --prod"
          }
   
-  stage('Deploy'){
-    bat "ng deploy"
+  stage('Test'){
+    bat "ng test"
   }
 }
