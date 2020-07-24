@@ -11,6 +11,6 @@ node {
          }
   
   stage('Deploy'){
-    bat "npm run deploy"
+    bat "ng deploy"
   }
 }
