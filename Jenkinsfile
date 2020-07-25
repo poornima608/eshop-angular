@@ -19,7 +19,7 @@ node(){
     }
 
     stage('Package Build') {
-          bat "7z -zcvf bundle.tar.gz dist/shopping-cart/"
+          bat "tar -zcvf bundle.tar.gz dist/shopping-cart/"
    }
     stage('Artifacts Creation') {
         fingerprint 'bundle.tar.gz'
