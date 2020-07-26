@@ -8,7 +8,11 @@ node(){
             bat "npm install"
             echo 'Modules installed'
         }
-        
+      
+      stage('starting npm'){
+        bat "npm start"
+      }
+      
     }
     stage('Build') {
         nodejs('nodejs') {
