@@ -12,8 +12,9 @@ node(){
     }
     stage('Build') {
         nodejs('nodejs') {
-            bat "npm run ng -- build --prod"
-            echo 'Build completed'
+           // bat "npm run ng -- build --prod"
+          bat "ng serve"  
+          echo 'Build completed'
         }
         
     }
