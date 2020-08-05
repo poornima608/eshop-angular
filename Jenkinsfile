@@ -19,7 +19,7 @@ node(){
     }
 
     stage('Package Build') {
-        bat "tar -zcvf bundle.tar.gz dist/shopping-cart/"
+        bat "tar -zcvf bundle.tar.gz dist/eshop-angular/"
     }
 
     stage('Artifacts Creation') {
