@@ -17,7 +17,7 @@ node(){
     stage('Build') {
         nodejs('nodejs') {
            // bat "npm run ng -- build --prod"
-         bat "run ng -- build --prod"
+         bat "start ng -- build --prod"
            bat "npm run ng -- test"
         //  bat "npm start --port 4500"  
           echo 'Build completed'
