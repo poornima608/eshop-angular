@@ -5,14 +5,14 @@ node(){
         
     stage('Install dependencies') {
         nodejs('nodejs') {
-            bat 'npm install'
+            bat "npm install"
             echo 'Modules installed'
         }
         
     }
     stage('Build') {
         nodejs('nodejs') {
-            bat 'npm run ng -- build --prod'
+            bat "npm run ng -- build --prod"
             echo 'Build completed'
         }
         
