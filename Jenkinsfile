@@ -2,31 +2,17 @@ node(){
     stage('Cloning Git') {
          git branch: 'master',url: 'https://github.com/poornima608/eshop-angular.git'
     }
-        
-    stage('Install dependencies') {
-        nodejs('nodejs') {
-            bat "npm install"
-            echo 'Modules installed'
-        }
-        
-    }
- // stage('npm install')
-  //{
-    //bat "npm start --port"
-  //}
-    stage('Build') {
-        nodejs('nodejs') {
-           // bat "npm run ng -- build --prod"
-         bat "start ng -- build --prod"
-           bat "npm run ng -- test"
-        //  bat "npm start --port 4500"  
-          echo 'Build completed'
-        }
-        
-    }
-
+       
+         
+         stage('Install node modules'){
+                      bat "npm install"
+         }
+         stage('Build'){
+                     bat "npm run ng -- build --prod"
+         }
+   
     stage('Package Build') {
-          bat '7z -zcvf bundle.tar.gz dist/eshop-angular/'
+          bat 'tar -zcvf bundle.tar.gz dist/eshop-angular/'
    }
     stage('Artifacts Creation') {
         fingerprint 'bundle.tar.gz'
