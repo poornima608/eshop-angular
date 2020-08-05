@@ -9,9 +9,9 @@ node(){
             echo 'Modules installed'
         }
       
-      stage('starting npm'){
-        bat "npm start"
-      }
+     // stage('starting npm'){
+       // bat "npm start"
+      //}
       
     }
     stage('Build') {
