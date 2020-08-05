@@ -10,19 +10,19 @@ node(){
         }
     }
       
-      stage('build'){
-        bat "npm start"
-      }
+     // stage('build'){
+       // bat "npm start"
+      //}
       
     
-  //  stage('Build') {
-       // nodejs('nodejs') {
-           // bat "npm run ng -- build --prod"
-         //   bat "npm run build"
-        //    echo 'Build completed'
-       // }
+   stage('Build') {
+        nodejs('nodejs') {
+            bat "npm run ng -- build --prod"
+            bat "npm run build"
+            echo 'Build completed'
+        }
         
-   // }
+    }
 
     stage('Package Build') {
           bat "tar -zcvf bundle.tar.gz dist/eshop-angular/"
