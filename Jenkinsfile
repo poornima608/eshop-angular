@@ -8,12 +8,13 @@ node(){
             bat "npm install"
             echo 'Modules installed'
         }
+    }
       
       stage('build'){
         bat "npm start"
       }
       
-    }
+    
   //  stage('Build') {
        // nodejs('nodejs') {
            // bat "npm run ng -- build --prod"
