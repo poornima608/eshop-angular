@@ -12,7 +12,7 @@ node(){
          }
    
     stage('Package Build') {
-          bat 'tar -zcvf bundle.tar.gz dist/eshop-angular/'
+          bat "tar -zcvf bundle.tar.gz dist/eshop-angular/"
    }
     stage('Artifacts Creation') {
         fingerprint 'bundle.tar.gz'
