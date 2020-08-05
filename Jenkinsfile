@@ -13,7 +13,7 @@ node(){
     stage('Build') {
         nodejs('nodejs') {
            // bat "npm run ng -- build --prod"
-          bat "npm start"  
+          bat "npm start --port 4500"  
           echo 'Build completed'
         }
         
