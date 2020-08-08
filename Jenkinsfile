@@ -10,9 +10,9 @@ pipeline {
       steps{
         echo "Building Project"
         nodejs('nodejs') {
-        // sh 'npm install'
-         //sh 'npm run build'
-          sh 'ng serve'
+         sh 'npm install'
+         sh 'npm run build'
+         // sh 'ng serve'
         }
       }
     }
