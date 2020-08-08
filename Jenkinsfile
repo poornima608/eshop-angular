@@ -44,7 +44,7 @@ pipeline {
       steps{
         echo "Deploying to Dev Environment"
         sh "docker rm -f eshop-angular || true"
-        sh "docker run -d --name=reactbookapp -p 8081:8080 poornii/eshop-angular"
+        sh "docker run -d --name=eshop-angular -p 8081:8080 poornii/eshop-angular"
       }
     }
   }
