@@ -1,35 +1,27 @@
-FROM node:latest
-RUN mkdir -p /App
-WORKDIR /App
-COPY . /App
-RUN npm install -g angular/cli
-RUN npm install
-EXPOSE 4200
-CMD ng serve --host 0.0.0.0
-
-
 # pull official base image
-#FROM node:current
+FROM node:current
 
 # set working directory
-#WORKDIR /
+WORKDIR /
 
 
 # add `/node_modules/.bin` to $PATH
-#ENV PATH /node_modules/.bin:$PATH
+ENV PATH /node_modules/.bin:$PATH
 
 # install app dependencies
-#COPY package.json ./
-#RUN npm i -g npm-check-updates
-#RUN ncu -u
-#RUN npm install -y
-#RUN npm install -g @angular/cli
+COPY package.json ./
+RUN npm i -g npm-check-updates
+RUN ncu -u
+RUN npm install -y
+RUN npm install -g @angular/cli
 
 # add app
-#COPY . ./
+COPY . ./
+
+EXPOSE 4200 
 
 # start app
 #CMD ["ng","serve"]
-#CMD ng serve --host 0.0.0.0
+CMD ng serve --host 0.0.0.0
 
-#EXPOSE 4200
+
