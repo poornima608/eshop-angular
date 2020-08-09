@@ -10,7 +10,7 @@ COPY package*.json ./
 
 # install app dependencies
 #COPY package.json ./
-#RUN npm i -g npm-check-updates
+RUN npm i -g npm-check-updates
 RUN ncu -u
 RUN npm install -y
 RUN npm install -g @angular/cli
