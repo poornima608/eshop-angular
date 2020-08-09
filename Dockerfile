@@ -21,4 +21,4 @@ COPY . ./
 # start app
 CMD ["ng","serve"]
 
-EXPOSE 8080
+EXPOSE 4200
