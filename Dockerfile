@@ -14,7 +14,7 @@ RUN npm i -g npm-check-updates
 RUN ncu -u
 RUN npm install -y
 RUN npm install -g @angular/cli
-RUN npm run build --prod
+
 
 
 # add app
