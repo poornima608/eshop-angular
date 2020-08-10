@@ -56,9 +56,9 @@ Resources:
       GroupDescription: "ELB SG"
       SecurityGroupIngress:
         - CidrIp: 0.0.0.0/0
-          FromPort: 8081
+          FromPort: 80
           IpProtocol: tcp
-          ToPort: 4200
+          ToPort: 80
 
   ServerSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
@@ -70,9 +70,9 @@ Resources:
         IpProtocol: tcp
         ToPort: 22
       - SourceSecurityGroupName: !Ref ELBSecurityGroup
-        FromPort: 4200
+        FromPort: 80
         IpProtocol: tcp
-        ToPort: 4200
+        ToPort: 80
 
   MyLoadBalancer:
     Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
@@ -90,7 +90,7 @@ Resources:
         - Type: forward
           TargetGroupArn: !Ref MyLoadBalancerTargetGroup
       LoadBalancerArn: !Ref MyLoadBalancer
-      Port: 4200
+      Port: 80
       Protocol: HTTP
 
   MyLoadBalancerTargetGroup:
@@ -99,15 +99,15 @@ Resources:
       HealthCheckIntervalSeconds: 30
       HealthCheckTimeoutSeconds: 5
       HealthyThresholdCount: 3
-      Port: 4200
+      Port: 80
       Protocol: HTTP
       UnhealthyThresholdCount: 5
       VpcId: !Ref ELBVPC
       Targets:
         - Id: !Ref MyInstance1
-          Port: 4200
+          Port: 80
         - Id: !Ref MyInstance2
-          Port: 4200
+          Port: 80
 Outputs:
   ELBDNSName:
     Description: The DNSName of the load balancer
