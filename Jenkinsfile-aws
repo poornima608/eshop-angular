@@ -5,8 +5,8 @@ pipeline {
       steps {
         echo "Creating AWS CloudFormation Stack"
         withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-key', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        //  sh 'aws cloudformation create-stack --stack-name petclinic --template-body file://aws-template-petclinic.yaml --region us-east-1 --parameters  ParameterKey=SSHKey,ParameterValue=prabhav-new ParameterKey=ELBVPC,ParameterValue=vpc-977297ea ParameterKey=ELBSubnet,ParameterValue="subnet-9df326c2\\,subnet-25538404"'
-       sh 'aws s3 ls'
+          sh 'aws cloudformation create-stack --stack-name eshop --template-body file://aws-template-eshop.yaml --region us-east-1 --parameters  ParameterKey=SSHKey,ParameterValue=AWS_EC2_Projec ParameterKey=ELBVPC,ParameterValue=vpc-47a7483a ParameterKey=ELBSubnet,ParameterValue="subnet-e1a9caac\\,subnet-0c7d9a3d"'
+       //sh 'aws s3 ls'
        }
       }
     }
