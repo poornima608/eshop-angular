@@ -4,19 +4,19 @@ pipeline {
       stage('Deploy to Prod1') {
                 steps {
                   echo "Deploying to Prod1"
-                  sshagent(['ssh-key']) {
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.228.244.29 docker rm -f eshop-angular || true"
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.228.244.29 docker run -d --name=eshop-angular -p 80:80 poornii/eshop-angular"
-                  }
+                //  sshagent(['ssh-key']) {
+                  //    sh "ssh -o StrictHostKeyChecking=no ec2-user@34.228.244.29 docker rm -f eshop-angular || true"
+                  //    sh "ssh -o StrictHostKeyChecking=no ec2-user@34.228.244.29 docker run -d --name=eshop-angular -p 80:80 poornii/eshop-angular"
+                 // }
                 }
       }
       stage('Deploy to Prod2') {
                 steps {
                   echo "Deploying to Prod2"
-                  sshagent(['ssh-key']) {
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.204.61.149 docker rm -f eshop-angular || true"
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.204.61.149 docker run -d --name=eshop-angular -p 80:80 poornii/eshop-angular"
-                  }
+                 // sshagent(['ssh-key']) {
+                   //   sh "ssh -o StrictHostKeyChecking=no ec2-user@34.204.61.149 docker rm -f eshop-angular || true"
+                   //   sh "ssh -o StrictHostKeyChecking=no ec2-user@34.204.61.149 docker run -d --name=eshop-angular -p 80:80 poornii/eshop-angular"
+                //  }
                 }
       }         
   }
