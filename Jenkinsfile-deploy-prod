@@ -5,8 +5,8 @@ pipeline {
                 steps {
                   echo "Deploying to Prod1"
                   sshagent(['ssh-key']) {
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@3.88.224.131 docker rm -f petclinic || true"
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@3.88.224.131 docker run -d --name=petclinic -p 8081:8080 poornii/petclinic"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.228.244.29 docker rm -f eshop-angular || true"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.228.244.29  docker run -d --name=eshop-angular -p 80:80 poornii/eshop-angular"
                   }
                 }
       }
@@ -14,8 +14,8 @@ pipeline {
                 steps {
                   echo "Deploying to Prod2"
                   sshagent(['ssh-key']) {
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@54.197.123.149 docker rm -f petclinic || true"
-                      sh "ssh -o StrictHostKeyChecking=no ec2-user@54.197.123.149 docker run -d --name=petclinic -p 8081:8080 poornii/petclinic"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.204.61.149 docker rm -f petclinic || true"
+                      sh "ssh -o StrictHostKeyChecking=no ec2-user@34.204.61.149  docker run -d --name=eshop-angular -p 80:80 poornii/eshop-angular"
                   }
                 }
       }         
